@@ -6,6 +6,7 @@
 package Lab5;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -21,7 +22,7 @@ public class Lab5Exercise3 {
         System.out.print("Enter n: ");
         int n = in.nextInt();
         for (int i = 0; i < n; i++) {
-            System.out.println("Product number " + (i + 1)+": ");
+            System.out.println("Product number " + (i + 1) + ": ");
             Product product = new Product();
             product.input();
             list.add(product);
@@ -30,7 +31,16 @@ public class Lab5Exercise3 {
     }
 
     public static void SortDesAndOutput() {
-
+        for (int i = 0; i < list.size() - 1; i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i).price < list.get(j).price) {
+                    Collections.swap(list, i, i);
+                }
+            }
+        }
+        for (Product product : list) {
+            product.output();
+        }
     }
 
     public static void FindAndDeleteByName() {
