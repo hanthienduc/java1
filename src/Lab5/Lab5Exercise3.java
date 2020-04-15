@@ -15,33 +15,41 @@ import java.util.Scanner;
 public class Lab5Exercise3 {
 
     static ArrayList<Product> list = new ArrayList();
-    
-    
-    public static void Input(){
-    
+
+    public static void Input() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = in.nextInt();
+        for (int i = 0; i < n; i++) {
+            System.out.println("Product number " + (i + 1)+": ");
+            Product product = new Product();
+            product.input();
+            list.add(product);
+            System.out.println();
+        }
     }
-    
-    public static void SortDesAndOutput(){
-        
+
+    public static void SortDesAndOutput() {
+
     }
-    
-    public static void FindAndDeleteByName(){
-    
+
+    public static void FindAndDeleteByName() {
+
     }
-    
-    public static void OutputAveragePrice(){
-        
+
+    public static void OutputAveragePrice() {
+
     }
-    
-    public static void End(){
+
+    public static void End() {
         System.exit(0);
     }
-    
+
     public static void Menu() {
         System.out.println("1. Input list products. ");
         System.out.println("2. Sort Descending by price output");
         System.out.println("3. Find and Delete product by name.");
-        System.out.println("4. Output Average product price. ");        
+        System.out.println("4. Output Average product price. ");
         System.out.println("0. End. ");
 
         Scanner in = new Scanner(System.in);
