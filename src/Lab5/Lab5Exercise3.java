@@ -44,7 +44,19 @@ public class Lab5Exercise3 {
     }
 
     public static void FindAndDeleteByName() {
-
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        String name = input.nextLine();
+        for (Product product : list) {
+            if (product.name.equalsIgnoreCase(name)) {
+                list.remove(product);
+                System.out.println("Deleted");
+                break;
+            } else {
+                System.out.println("Not exist!");
+                break;
+            }
+        }
     }
 
     public static void OutputAveragePrice() {
@@ -63,33 +75,35 @@ public class Lab5Exercise3 {
         System.out.println("0. End. ");
 
         Scanner in = new Scanner(System.in);
-        System.out.print("Your choice? ");
-        int choice = in.nextInt();
-        switch (choice) {
-            case 1:
-                Input();
-                break;
-            case 2:
-                SortDesAndOutput();
-                break;
-            case 3:
-                FindAndDeleteByName();
-                break;
-            case 4:
-                OutputAveragePrice();
-                break;
-            case 0:
-                End();
-                break;
-            default:
-                System.out.println("Not Exist Option! ");
-                System.out.println("Your choice? ");
-                choice = in.nextInt();
-                break;
+        while (true) {
+            System.out.print("Your choice? ");
+            int choice = in.nextInt();
+            switch (choice) {
+                case 1:
+                    Input();
+                    break;
+                case 2:
+                    SortDesAndOutput();
+                    break;
+                case 3:
+                    FindAndDeleteByName();
+                    break;
+                case 4:
+                    OutputAveragePrice();
+                    break;
+                case 0:
+                    End();
+                    break;
+                default:
+                    System.out.println("Not Exist Option! ");
+                    System.out.println("Your choice? ");
+                    choice = in.nextInt();
+                    break;
+            }
         }
     }
 
     public static void main(String[] args) {
-
+        Menu();
     }
 }
