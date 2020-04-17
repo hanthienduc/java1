@@ -60,7 +60,15 @@ public class Lab5Exercise3 {
     }
 
     public static void OutputAveragePrice() {
-
+        double sum = 0;
+        int count = 0;
+        for(Product product : list){
+            sum += product.price;
+            count++;
+        }
+        
+        double avg = sum / count;
+        System.out.println("Average price: "+ avg);
     }
 
     public static void End() {
